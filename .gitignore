@@ -1,0 +1,17 @@
+node_modules/
+dist/
+.video-tools/
+*.log
+.env
+.env.*
+!.env.example
+web/preview-*.png
+web/comparison*.png
+web/transition-*.jpg
+web/*reference*.png
+web/client-assets.jpg
+web/design-qa.md
+referencia-mlg.png
+web/public/assets/hero-montevideo.png
+web/public/assets/hero-sky.png
+web/public/assets/hero-building.png
