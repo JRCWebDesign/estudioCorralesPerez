@@ -172,10 +172,22 @@ h3 {
   width: 54px;
   height: 54px;
   border-radius: 50%;
-  background: var(--navy);
-  border: 1px solid #ffffff24;
-  box-shadow: 0 4px 16px #0003;
+  background: #25d366;
+  border: 1px solid #ffffff26;
+  box-shadow:
+    0 0 0 7px #25d36620,
+    0 6px 22px #0003;
+  transition:
+    background 180ms ease,
+    box-shadow 180ms ease;
   color: #fff;
+}
+
+.mobile-contact-shortcut:hover {
+  background: #20bd5a;
+  box-shadow:
+    0 0 0 9px #25d36624,
+    0 6px 22px #0003;
 }
 
 .mobile-contact-shortcut svg {
