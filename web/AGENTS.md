@@ -17,5 +17,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Desktop integrates header, name, provisional presentation and Contactar over the photo. Avoid a detached action strip below the hero.
 - Fade the photograph into the page navy (#061B34). Use that same navy for Contactar.
 - Mobile navigation is a compact translucent panel with serif links; close on selection, outside click or Escape.
-- Fixed WhatsApp brand icon uses Font Awesome at 27 px inside a discreet 46 px button. Until the public number is confirmed, link to the internal Contacto section.
+- Fixed WhatsApp brand icon uses Font Awesome at 33 px inside a discreet 54 px button. Until the public number is confirmed, link to the internal Contacto section.
 - Logo and unconfirmed content remain provisional. Do not invent credentials, contact details, testimonials or specialties.
+
+- Initial presentation and Contactar fade in from the left after the letters; respect reduced motion.

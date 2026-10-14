@@ -169,8 +169,8 @@ h3 {
   bottom: calc(20px + env(safe-area-inset-bottom));
   display: grid;
   place-items: center;
-  width: 46px;
-  height: 46px;
+  width: 54px;
+  height: 54px;
   border-radius: 50%;
   background: var(--navy);
   border: 1px solid #ffffff24;
@@ -179,8 +179,8 @@ h3 {
 }
 
 .mobile-contact-shortcut svg {
-  width: 27px;
-  height: 27px;
+  width: 33px;
+  height: 33px;
 }
 
 .hero-canvas {
@@ -430,6 +430,32 @@ h3 {
 
 .hero.is-ready .hero-layer-perez {
   animation: name-enter 450ms ease-out 620ms both;
+}
+
+.hero .hero-description,
+.hero .hero-subtitle,
+.hero .hero-button {
+  opacity: 0;
+}
+
+.hero.is-ready .hero-description,
+.hero.is-ready .hero-subtitle {
+  animation: content-enter 600ms cubic-bezier(0.22, 1, 0.36, 1) 850ms both;
+}
+
+.hero.is-ready .hero-button {
+  animation: content-enter 600ms cubic-bezier(0.22, 1, 0.36, 1) 1050ms both;
+}
+
+@keyframes content-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @keyframes menu-enter {
@@ -730,6 +756,12 @@ h3 {
   *::after {
     transition: none !important;
     animation: none !important;
+  }
+  .hero .hero-description,
+  .hero .hero-subtitle,
+  .hero .hero-button {
+    opacity: 1;
+    transform: none;
   }
   .hero-layer {
     opacity: 1;
