@@ -103,6 +103,8 @@ function Header() {
   );
 }
 
+const assetUrl = (path) => `${import.meta.env.BASE_URL}assets/${path}`;
+
 const heroLayers = [
   { name: "background", file: "5.png" },
   { name: "corrales", file: "corrales.png" },
@@ -122,13 +124,13 @@ function Hero() {
         image.onerror = resolve;
         image.src = file;
       });
-    const files = heroLayers.map(
-      ({ file }) => `/assets/client-originals/${file}`,
+    const files = heroLayers.map(({ file }) =>
+      assetUrl(`client-originals/${file}`),
     );
     if (window.matchMedia("(max-width: 760px)").matches) {
       files.push(
-        "/assets/hero-mobile-photo.png",
-        "/assets/hero-mobile-building.png",
+        assetUrl("hero-mobile-photo.png"),
+        assetUrl("hero-mobile-building.png"),
       );
     }
     Promise.all(files.map(loadImage)).then(() => {
@@ -157,13 +159,13 @@ function Hero() {
                   media="(max-width: 760px)"
                   srcSet={
                     name === "background"
-                      ? "/assets/hero-mobile-photo.png"
-                      : "/assets/hero-mobile-building.png"
+                      ? assetUrl("hero-mobile-photo.png")
+                      : assetUrl("hero-mobile-building.png")
                   }
                 />
               )}
               <img
-                src={`/assets/client-originals/${file}`}
+                src={assetUrl(`client-originals/${file}`)}
                 alt=""
                 width={
                   name === "corrales" ? 1664 : name === "perez" ? 995 : 2160
