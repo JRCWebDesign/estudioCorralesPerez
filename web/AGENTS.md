@@ -23,3 +23,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Initial presentation and Contactar fade in from the left after the letters; respect reduced motion.
 
 - The fixed WhatsApp shortcut uses the familiar green background (#25D366), white brand icon and a subtle green halo, matching the supplied reference. Keep the 54 px button and 33 px icon.
+
+- WhatsApp has a soft expanding and fading green halo (two staggered pulses). The icon and button stay still; disable the pulse for reduced motion.
