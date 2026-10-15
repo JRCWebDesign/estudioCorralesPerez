@@ -19,3 +19,7 @@
 Logo definitivo, presentacion del estudio, servicios detallados, contacto y finalidad de Mercado Pago. No hay cobros ni envios de formularios activos.
 
 Fuentes: Bodoni Moda y Manrope desde Google Fonts. Iconos: Phosphor y Font Awesome para WhatsApp.
+
+## Datos de contacto
+
+Editar solo src/config/contacto.js para cambiar telefono, WhatsApp, mensaje inicial, Instagram, correo, direccion y horarios. Los enlaces se generan automaticamente y los datos vacios no se publican.

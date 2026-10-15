@@ -25,3 +25,5 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - The fixed WhatsApp shortcut uses the familiar green background (#25D366), white brand icon and a subtle green halo, matching the supplied reference. Keep the 54 px button and 33 px icon.
 
 - WhatsApp has a soft expanding and fading green halo (two staggered pulses). The icon and button stay still; disable the pulse for reduced motion.
+
+- Public contact details and social URLs must come from src/config/contacto.js. Never hardcode them in components or reuse the private phone from chat. Blank fields mean pending data. The floating WhatsApp shortcut falls back to #contacto until its number is configured.

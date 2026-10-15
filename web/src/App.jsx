@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { contacto, enlacesContacto } from "./config/contacto.js";
 import {
   ArrowRight,
   HouseLine,
@@ -196,8 +197,14 @@ function Hero() {
       </div>
       <a
         className="mobile-contact-shortcut"
-        href="#contacto"
-        aria-label="Ver medios de contacto del estudio"
+        href={enlacesContacto.whatsapp || "#contacto"}
+        target={enlacesContacto.whatsapp ? "_blank" : undefined}
+        rel={enlacesContacto.whatsapp ? "noopener noreferrer" : undefined}
+        aria-label={
+          enlacesContacto.whatsapp
+            ? "Contactar por WhatsApp"
+            : "Ver medios de contacto del estudio"
+        }
       >
         <FontAwesomeIcon icon={faWhatsapp} />
       </a>
@@ -279,7 +286,49 @@ export function App() {
         <section id="contacto" className="content-section section-inner reveal">
           <p className="eyebrow">Contacto</p>
           <h2>Contactá al estudio</h2>
-          <p>Teléfono, correo, dirección y horarios a completar.</p>
+          {Object.values(enlacesContacto).some(Boolean) ||
+          contacto.direccion ||
+          contacto.horarios ? (
+            <div className="contact-details">
+              {enlacesContacto.telefono && (
+                <p>
+                  Teléfono:{" "}
+                  <a href={enlacesContacto.telefono}>{contacto.telefono}</a>
+                </p>
+              )}
+              {enlacesContacto.whatsapp && (
+                <p>
+                  <a
+                    href={enlacesContacto.whatsapp}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    WhatsApp: {contacto.whatsapp}
+                  </a>
+                </p>
+              )}
+              {enlacesContacto.email && (
+                <p>
+                  Correo: <a href={enlacesContacto.email}>{contacto.email}</a>
+                </p>
+              )}
+              {enlacesContacto.instagram && (
+                <p>
+                  <a
+                    href={enlacesContacto.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Instagram
+                  </a>
+                </p>
+              )}
+              {contacto.direccion && <p>Dirección: {contacto.direccion}</p>}
+              {contacto.horarios && <p>Horarios: {contacto.horarios}</p>}
+            </div>
+          ) : (
+            <p>Datos de contacto a completar.</p>
+          )}
         </section>
       </main>
       <footer className="site-footer section-inner">
