@@ -46,3 +46,11 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 
 - User deferred the Tribunales photo experiment: keep original desktop 5.png/4.png and original mobile photo/cutout. Publish content/contact/footer updates only; do not publish generated trial assets.
+
+- Client supplied palette (latest): champagne #F2E4D0, antique gold #C6A15B, burgundy #6E1734, wine #8F2948, espresso #2A1018. Preview colors locally first; keep current photo, layout, typography and animations for this palette-only iteration. WhatsApp retains its recognizable green. Do not publish until requested.
+
+- Current local preview uses the client-supplied real Tribunales photograph (assets/tribunales-cliente.png) unchanged, with CSS shading and responsive cropping only. Do not regenerate architecture. Original animated surname PNGs remain; remove the previous building occlusion layer so the old building cannot overlay the new photo. Await publishing instruction.
+
+- Latest photo request: restore the previous sunset mood and add a warm restrained filter to the client photo. Local hero uses tribunales-cliente-atardecer.png (AI-assisted sky/lighting edit); keep the supplied original intact. Do not claim pixel-exact architectural preservation after generative editing. No publication requested.
+
+- Latest palette refinement: use darkest espresso #2A1018 for the main page background and hero fade. Burgundy/wine remain accents and interaction colors; retain champagne contact section.

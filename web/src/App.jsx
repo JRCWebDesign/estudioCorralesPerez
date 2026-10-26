@@ -104,9 +104,8 @@ function Header() {
 const assetUrl = (path) => `${import.meta.env.BASE_URL}assets/${path}`;
 
 const heroLayers = [
-  { name: "background", file: "5.png" },
+  { name: "background", file: "../tribunales-cliente-atardecer.png" },
   { name: "corrales", file: "corrales.png" },
-  { name: "building", file: "4.png" },
   { name: "perez", file: "perez.png" },
 ];
 
@@ -127,8 +126,7 @@ function Hero() {
     );
     if (window.matchMedia("(max-width: 760px)").matches) {
       files.push(
-        assetUrl("hero-mobile-photo.png"),
-        assetUrl("hero-mobile-building.png"),
+        assetUrl("tribunales-cliente-atardecer.png"),
       );
     }
     Promise.all(files.map(loadImage)).then(() => {
@@ -157,7 +155,7 @@ function Hero() {
                   media="(max-width: 760px)"
                   srcSet={
                     name === "background"
-                      ? assetUrl("hero-mobile-photo.png")
+                      ? assetUrl("tribunales-cliente-atardecer.png")
                       : assetUrl("hero-mobile-building.png")
                   }
                 />
