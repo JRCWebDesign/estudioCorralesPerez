@@ -27,3 +27,22 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - WhatsApp has a soft expanding and fading green halo (two staggered pulses). The icon and button stay still; disable the pulse for reduced motion.
 
 - Public contact details and social URLs must come from src/config/contacto.js. Never hardcode them in components or reuse the private phone from chat. Blank fields mean pending data. The floating WhatsApp shortcut falls back to #contacto until its number is configured.
+
+- Client content (October 2026): organize services into Áreas jurídicas, Servicios notariales and Gestiones. Expose each legal specialty separately; property administration belongs within notarial services. Public professional phone contacts are supplied in src/config/contacto.js; no WhatsApp number has been explicitly designated.
+
+- Contact cards include a WhatsApp action for each professional using their supplied public number, and share the service cards hover lift, background and shadow.
+
+- Contact cards show the professional name and WhatsApp button only; do not display phone numbers.
+
+- Reduce the continuous navy background with warm cream and paper sections for the study, legal specialties, procedures and contact; retain navy in the hero, overview cards, notarial section and footer. Footer includes the JRC Web design/development credit linking to https://www.jrcweb.tech/.
+
+- User rejected white backgrounds and found Bodoni headings hard to read on light surfaces. Use distinctly warm sand/taupe surfaces instead of white or near-white, and Georgia headings with stronger strokes. Preserve the original hero PNG lettering.
+
+- Latest feedback supersedes light/cream/sand backgrounds: use navy throughout, with one gold contact block and navy text. Reduce copy to short summaries; legal specialties display in a compact grid with no dropdowns and no duplicated specialty navigation. Notarial and procedures lists are grouped and shortened.
+
+- Latest correction: user rejected the yellow/gold contact background. Keep the original navy/gold design, compact copy and subtle existing motion; only Contacto uses a white background, navy text and restrained white cards. Avoid further broad redesigns or palette experiments.
+
+- Footer follows the existing Elodie Bentancor / Valentín Adán sites: compact study information, inline © year · Diseño y desarrollo · JRC credit, and Volver al inicio link. Keep the navy theme and stack cleanly on mobile.
+
+
+- User deferred the Tribunales photo experiment: keep original desktop 5.png/4.png and original mobile photo/cutout. Publish content/contact/footer updates only; do not publish generated trial assets.

@@ -33,3 +33,9 @@ export const enlacesContacto = {
   instagram: contacto.instagram.trim() || null,
   email: contacto.email.trim() ? `mailto:${contacto.email.trim()}` : null,
 };
+
+// Contactos públicos facilitados por el estudio.
+export const profesionales = [
+  { nombre: "Dra. Alfonsina Corrales Arbelo", telefono: "093 661 833", enlace: "tel:+59893661833", whatsapp: "https://wa.me/59893661833" },
+  { nombre: "Dra. Ana Pérez Pérez", telefono: "098 745 630", enlace: "tel:+59898745630", whatsapp: "https://wa.me/59898745630" },
+];

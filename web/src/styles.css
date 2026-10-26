@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Manrope:wght@400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap");
 
 :root {
   font-family: "Manrope", sans-serif;
@@ -8,7 +8,7 @@
   --navy: #061b34;
   --gold: #e2bd71;
   --muted: #c1cbd9;
-  --display: "Bodoni Moda", Georgia, serif;
+  --display: Georgia, "Times New Roman", serif;
 }
 
 * {
@@ -381,7 +381,9 @@ h3 {
     background 300ms ease,
     box-shadow 300ms ease;
 }
-.service-card:hover {
+.service-card:hover,
+.professional-card:hover,
+.professional-card:focus-within {
   transform: translateY(-5px);
   background: #102a45;
   box-shadow: 0 10px 32px #0002;
@@ -812,4 +814,63 @@ h3 {
     opacity: 1;
     transform: none;
   }
+}
+
+.content-section > p:not(.eyebrow), .specialty p { color: var(--muted); line-height: 1.8; max-width: 850px; margin-bottom: 18px; }
+.area-links { display: flex; flex-wrap: wrap; gap: 12px; margin-block: 30px 40px; }
+.area-links a { display: inline-flex; align-items: center; gap: 10px; border: 1px solid #e2bd7145; border-radius: 24px; padding: 12px 18px; font-size: 14px; }
+.area-links a:hover { background: #102a45; }
+.specialties { display: grid; gap: 40px; }
+.specialty { scroll-margin-top: 32px; min-width: 0; }
+.specialty h3 { font-size: clamp(27px, 3vw, 36px); color: var(--gold); margin-bottom: 16px; }
+.specialty details { border-bottom: 1px solid #e2bd7126; }
+.specialty summary { cursor: pointer; padding: 18px 6px; line-height: 1.6; }
+.specialty summary::marker { color: var(--gold); }
+.specialty summary:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+.specialty details[open] summary { color: var(--gold); }
+.specialty details p { padding: 0 24px 8px; }
+.service-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 32px; padding-left: 20px; margin-top: 28px; }
+.service-list li { padding: 14px 4px; color: var(--muted); line-height: 1.7; }
+.service-list li::marker { color: var(--gold); }
+.professional-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 28px; }
+.professional-card { border: 1px solid var(--gold); border-radius: 18px; padding: 28px; transition: transform 300ms ease, background 300ms ease, box-shadow 300ms ease; }
+.professional-card h3 { font-size: 26px; margin-bottom: 18px; }
+.professional-card .professional-contact { display: flex; width: fit-content; max-width: 100%; margin-top: 20px; min-height: 48px; padding: 12px 20px; gap: 12px; font-size: 14px; text-transform: none; letter-spacing: 0; }
+.professional-contact svg { width: 22px; height: 22px; flex-shrink: 0; }
+@media (max-width: 760px) { .service-list, .professional-grid { grid-template-columns: 1fr; } .eyebrow { letter-spacing: 3px; font-size: 14px; } }
+
+.content-section h2, .section-heading h2, .specialty h3, .professional-card h3 { font-weight: 400; line-height: 1.25; }
+
+.specialties { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; margin-top: 32px; }
+.specialty { border-top: 1px solid #e2bd7133; padding-block: 26px; }
+.specialty h3 { font-size: clamp(24px, 2.4vw, 30px); }
+.specialty p { margin-bottom: 0; font-size: 15px; }
+.specialty:last-child { grid-column: 1 / -1; }
+.contact-band { background: #ffffff; color: #061b34; --muted: #465667; --gold: #061b34; }
+.contact-band .content-section { border: 0; }
+.contact-band .professional-card { border-color: #061b3426; background: #ffffff; }
+.contact-band .professional-card:hover, .contact-band .professional-card:focus-within { background: #f5f7fa; box-shadow: 0 10px 32px #061b3414; }
+.contact-band .professional-contact { color: #f5f2ed; }
+.contact-band .professional-contact svg { color: #e2bd71; }
+@media (max-width: 760px) { .specialties { grid-template-columns: 1fr; } .specialty:last-child { grid-column: auto; } }
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  padding: 30px 70px 30px 0;
+  font-family: "Manrope", sans-serif;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.footer-info strong { display: block; font-size: 15px; font-weight: 600; color: #f5f2ed; }
+.site-footer .footer-info span { margin-top: 0; font-size: 11px; }
+.footer-credit { font-size: 12px; }
+.footer-credit a { color: var(--gold); }
+.footer-top { flex-shrink: 0; padding-block: 10px; }
+.site-footer a:hover { text-decoration: underline; text-underline-offset: 5px; }
+@media (max-width: 760px) {
+  .site-footer { flex-direction: column; align-items: flex-start; gap: 16px; padding: 30px 0 100px; }
 }

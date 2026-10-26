@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { contacto, enlacesContacto } from "./config/contacto.js";
+import { contacto, enlacesContacto, profesionales } from "./config/contacto.js";
+import { especialidades, resumenes } from "./config/servicios.js";
 import {
   ArrowRight,
   HouseLine,
@@ -13,13 +14,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 
 const areas = [
-  { id: "juridico", title: "Servicios jurídicos", Icon: Scales },
-  { id: "notarial", title: "Sector notarial", Icon: Scroll },
-  {
-    id: "propiedades",
-    title: "Administración de propiedades",
-    Icon: HouseLine,
-  },
+  { id: "juridico", title: "Áreas jurídicas", Icon: Scales, description: "Asesoramiento y representación en familia, laboral, administrativo y otras áreas del Derecho." },
+  { id: "notarial", title: "Servicios notariales", Icon: Scroll, description: "Seguridad jurídica en operaciones, contratos y actos de particulares y empresas." },
+  { id: "gestiones", title: "Gestiones", Icon: HouseLine, description: "Trámites ante organismos públicos e instituciones privadas en Florida y Montevideo." },
 ];
 
 function Header() {
@@ -182,14 +179,14 @@ function Hero() {
       </div>
       <div className="hero-actions section-inner">
         <p className="hero-description">
-          Presentación del estudio a completar.
+          Asesoramiento jurídico con compromiso y cercanía.
           <br />
-          Servicios jurídicos y notariales.
+          Atención personalizada en Montevideo.
           <br />
-          Administración de propiedades.
+          Consultas online en todo el país.
         </p>
         <p className="hero-subtitle">
-          Jurídico · Notarial · Administración de propiedades
+          Jurídico · Notarial · Gestiones
         </p>
         <a className="button hero-button" href="#contacto">
           Contactar <ArrowRight size={23} weight="light" />
@@ -220,13 +217,13 @@ function Services() {
         <h2>Tres áreas, un mismo estudio</h2>
       </div>
       <div className="service-grid">
-        {areas.map(({ id, title, Icon }) => (
+        {areas.map(({ id, title, Icon, description }) => (
           <article className="service-card" key={id}>
             <div className="service-icon">
               <Icon size={48} weight="thin" />
             </div>
             <h3>{title}</h3>
-            <p>Información a completar</p>
+            <p>{description}</p>
             <span className="gold-rule" />
             <a href={`#${id}`}>
               Conocer más <ArrowRight size={19} />
@@ -263,6 +260,7 @@ export function App() {
       <main>
         <Hero />
         <Services />
+        <div className="navy-band">
         <section id="estudio" className="content-section section-inner reveal">
           <p className="eyebrow">El estudio</p>
           <h2>
@@ -270,22 +268,62 @@ export function App() {
             <br />
             Ana Pérez Pérez
           </h2>
-          <p>Presentación del estudio a completar.</p>
+          <p>Asesoramiento jurídico y notarial con compromiso y cercanía. Escuchamos cada situación y te acompañamos con soluciones adaptadas a tu caso, un trato personalizado y un lenguaje claro.</p>
         </section>
-        {areas.map(({ id, title }) => (
-          <section
-            id={id}
-            className="content-section section-inner reveal"
-            key={id}
-          >
-            <p className="eyebrow">Nuestras áreas</p>
-            <h2>{title}</h2>
-            <p>Información de los servicios a completar.</p>
-          </section>
-        ))}
+        </div>
+        <div className="navy-band">
+        <section id="juridico" className="content-section section-inner reveal">
+          <p className="eyebrow">Áreas jurídicas</p>
+          <h2>Asesoramiento para cada situación</h2>
+          <p>Cada situación requiere un análisis particular. Te acompañamos con orientación jurídica clara, responsable y fundada.</p>
+          <div className="specialties">
+            {especialidades.map(({ id, title }) => (
+              <article id={id} key={id} className="specialty">
+                <h3>{title}</h3>
+                <p>{resumenes[id]}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+        </div>
+        <section id="notarial" className="content-section section-inner reveal">
+          <p className="eyebrow">Servicios notariales</p>
+          <h2>Seguridad jurídica y atención personalizada</h2>
+          <p>Asesoramiento a particulares y empresas en sus operaciones y actos notariales.</p>
+          <ul className="service-list">
+            <li>Inmuebles, automotores y arrendamientos</li>
+            <li>Poderes y certificaciones de firmas</li>
+            <li>Hipotecas y garantías</li>
+            <li>Sociedades y contratos sociales</li>
+            <li>Testamentos y capitulaciones</li>
+            <li>Certificados, trámites y administración de propiedades</li>
+          </ul>
+        </section>
+        <div className="navy-band">
+        <section id="gestiones" className="content-section section-inner reveal">
+          <p className="eyebrow">Gestiones</p>
+          <h2>Tus trámites, con acompañamiento</h2>
+          <p>Trámites ante organismos públicos e instituciones privadas en Florida y Montevideo.</p>
+          <ul className="service-list">
+            <li>Documentos ante DGR y procuración de expedientes</li>
+            <li>Partidas, legalizaciones y apostillas</li>
+            <li>Gestiones públicas y privadas y rúbricas de libros societarios</li>
+          </ul>
+        </section>
+        </div>
+        <div className="contact-band">
         <section id="contacto" className="content-section section-inner reveal">
           <p className="eyebrow">Contacto</p>
           <h2>Contactá al estudio</h2>
+          <p>Atención presencial en Montevideo y consultas online en todo el país.</p>
+          <div className="professional-grid">{profesionales.map(({ nombre, whatsapp }) => (
+            <article className="professional-card" key={nombre}>
+              <h3>{nombre}</h3>
+              <a className="button professional-contact" href={whatsapp} target="_blank" rel="noopener noreferrer" aria-label={`Contactar por WhatsApp a ${nombre}`}>
+                <FontAwesomeIcon icon={faWhatsapp} /> Contactar por WhatsApp
+              </a>
+            </article>
+          ))}</div>
           {Object.values(enlacesContacto).some(Boolean) ||
           contacto.direccion ||
           contacto.horarios ? (
@@ -327,13 +365,21 @@ export function App() {
               {contacto.horarios && <p>Horarios: {contacto.horarios}</p>}
             </div>
           ) : (
-            <p>Datos de contacto a completar.</p>
+            null
           )}
         </section>
+        </div>
       </main>
       <footer className="site-footer section-inner">
-        Estudio Corrales Pérez
-        <span>Jurídico · Notarial · Administración de propiedades</span>
+        <p className="footer-info">
+          <strong>Estudio Corrales Pérez</strong>
+          <span>Jurídico · Notarial · Gestiones</span>
+          <span>Montevideo · Atención presencial y online</span>
+        </p>
+        <p className="footer-credit">
+          © {new Date().getFullYear()} · Diseño y desarrollo · <a href="https://www.jrcweb.tech/" target="_blank" rel="noopener noreferrer">JRC</a>
+        </p>
+        <a className="footer-top" href="#inicio">Volver al inicio ↑</a>
       </footer>
     </>
   );
